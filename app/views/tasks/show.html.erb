@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h3>
   <strong>Content:</strong>
   <%= @task.content %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>State:</strong>
   <%= @task.state %>
-</p>
+</h3>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to '<h3>Edit</h3>'.html_safe, edit_task_path(@task) %> 
+<%= link_to '<h3>Back</h3>'.html_safe, tasks_path %>
