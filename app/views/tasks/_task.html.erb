@@ -1,13 +1,16 @@
-<div class="panel-info">
+<div class="panel panel-info">
 			<div class="panel-heading">
 				<%= link_to edit_task_path(task) do %>	
 				created <%=time_ago_in_words(task.created_at) %> ago
 				<% end %>
 
-				<%= link_to "X", task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" %>
+				<%= link_to "<i class='fa fa-window-close'></i>".html_safe, task_path(task), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" %>
 
 			</div>
-			<div class="panel-body"><%= task.content%></div>
+			
+			<div class="panel-body"><%= raw(task.content_html) %></div>
+
+
 			<div class="panel-footer text-center">
 
 			<% if task.state == "doing" %>
